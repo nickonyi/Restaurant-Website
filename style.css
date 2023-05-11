@@ -1,0 +1,7 @@
+body {
+    background-image: url('../assests/Back-image.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 30%;
+    ;
+    background-size: cover;
+}
