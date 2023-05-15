@@ -19,8 +19,8 @@
     --fs-550: 1.2rem;
     --fs-600: 1.875rem;
     --fs-700: 2rem;
-    -fs-800: 2.5rem;
-    -fs-900: 3.5rem;
+    --fs-800: 2.5rem;
+    --fs-900: 3.5rem;
     --fs-body: var(--fs-400);
     --fs-primary-heading: var(--fs-700);
     --fs-secondary-heading: var(--fs-600);
@@ -72,7 +72,7 @@ html:focus-within {
 
 html,
 body {
-    height: 100%;
+    min-height: 100%;
 }
 
 
@@ -81,13 +81,23 @@ body {
 body {
     text-rendering: optimizeSpeed;
     line-height: 1.5;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url('../assests/Back-image.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url('../assets/Back-image.jpg');
     background-repeat: no-repeat;
     background-position: 50% 30%;
     background-size: cover;
     font-family: var(--ff-body);
     font-size: var(--fs-500);
-    color: var(--clr-primary-100);
+    color: var(--clr-neutral-100);
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 
@@ -184,6 +194,7 @@ svg {
 
 .home__subtext {
     margin-top: 20px;
+    color: var(--clr-primary-100);
 }
 
 .home__button {
@@ -198,6 +209,64 @@ svg {
 }
 
 
+/* Menu */
+
+.menu__header-container {
+    border: 1px solid saddlebrown;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__title {
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-500);
+    font-weight: var(--fw-regular);
+    color: var(--clr-neutral-900);
+}
+
+.menu__text {
+    font-size: var(--fs-700);
+    text-transform: uppercase;
+}
+
+.menu__item-image {
+    width: 100px;
+    height: auto;
+}
+
+.menu__item-div {
+    border: 1px solid red;
+    display: flex;
+    gap: 20px;
+    padding-inline: 10px;
+    padding-block: 10px;
+}
+
+.menu__item-name {
+    text-transform: uppercase;
+    font-size: var(--fs-550);
+    font-weight: var(--fw-semi-bold);
+}
+
+.menu__item-decoration {
+    display: flex;
+}
+
+.menu__item-decoration-circle {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--clr-accent-color);
+    border-radius: 50%;
+}
+
+.menu__item-decoration-line {
+    width: 60px;
+    border-bottom: 2px solid var(--clr-accent-color);
+    margin-bottom: 17%;
+}
+
+
 /* Footer */
 
 .footer {
@@ -209,8 +278,7 @@ svg {
     padding: 1rem;
     border-top: 1px solid var(--border-color);
     background-color: var(--background-light);
-    position: fixed;
-    bottom: 0;
+    margin-top: auto;
 }
 
 .fa-github {
