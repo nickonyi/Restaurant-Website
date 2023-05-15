@@ -4,6 +4,7 @@
     --clr-primary-100: hsl(45, 100%, 85%);
     --clr-neutral-100: hsl(0, 0%, 100%);
     --clr-neutral-900: hsl(38, 100%, 50%);
+    --clr-neutral-400: hsl(0, 87%, 40%);
     --ff-primary: 'Be Vietnam Pro', sans-serif;
     --ff-secondary: 'Lobster', cursive;
     --ff-tertiary: 'Tangerine', cursive;
@@ -15,6 +16,7 @@
     --fs-300: .8125rem;
     --fs-400: .875rem;
     --fs-500: 1rem;
+    --fs-550: 1.2rem;
     --fs-600: 1.875rem;
     --fs-700: 2rem;
     -fs-800: 2.5rem;
@@ -79,10 +81,13 @@ body {
 body {
     text-rendering: optimizeSpeed;
     line-height: 1.5;
-    /* background-image: url('../assests/Back-image.jpg');*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url('../assests/Back-image.jpg');
     background-repeat: no-repeat;
     background-position: 50% 30%;
     background-size: cover;
+    font-family: var(--ff-body);
+    font-size: var(--fs-500);
+    color: var(--clr-primary-100);
 }
 
 
@@ -119,22 +124,6 @@ svg {
     }
 }
 
-.big {
-    font-family: var(--ff-tertiary);
-    color: var(--clr-neutral-900);
-    font-size: 3.5rem;
-    position: relative;
-    margin: auto;
-    top: 20px;
-}
-
-
-/* Utility classes */
-
-.text-primary-400 {
-    color: var(--clr-primary-100);
-}
-
 
 /* Header styling */
 
@@ -144,14 +133,19 @@ svg {
 }
 
 .nav {
-    border: 1px solid yellow;
     display: flex;
-    gap: 10px;
+    gap: 30px;
+    font-family: var(--ff-primary);
+    padding-block: 20px;
+    justify-content: center;
 }
 
 .nav__button {
     transition: transform .5s;
     border: none;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: var(--clr-neutral-100);
 }
 
 .nav__button .active {
@@ -161,4 +155,69 @@ svg {
 .nav__button:hover {
     cursor: pointer;
     transform: scale(1.2);
+    color: var(--clr-neutral-900);
+}
+
+
+/* Home page */
+
+.home {
+    position: relative;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home__title {
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-550);
+    color: var(--clr-neutral-900);
+}
+
+.home__text {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-700);
+    font-weight: var(--fw-semi-bold);
+    color: var(--clr-neutral-100);
+}
+
+.home__subtext {
+    margin-top: 20px;
+}
+
+.home__button {
+    margin-block: 40px;
+    padding-block: 10px;
+    padding-inline: 20px;
+    color: var(--clr-neutral-100);
+    background: var(--clr-primary-400);
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+
+/* Footer */
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--background-light);
+    position: fixed;
+    bottom: 0;
+}
+
+.fa-github {
+    font-size: 2rem;
+    color: var(--clr-neutral-100);
+}
+
+.fa-github:hover {
+    color: var(--clr-neutral-900);
 }
