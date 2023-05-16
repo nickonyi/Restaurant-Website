@@ -219,12 +219,8 @@ svg {
 }
 
 .menu__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding-block: 10px;
     padding-inline: 20px;
-    text-align: center;
 }
 
 .menu__title {
@@ -242,7 +238,9 @@ svg {
 .menu__item-image {
     width: 100px;
     height: 100px;
-    margin-block: 20px;
+    position: relative;
+    margin: auto;
+    margin-block: 30px;
 }
 
 .menu__item-div {
