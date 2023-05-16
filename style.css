@@ -8,6 +8,7 @@
     --ff-primary: 'Be Vietnam Pro', sans-serif;
     --ff-secondary: 'Lobster', cursive;
     --ff-tertiary: 'Tangerine', cursive;
+    --ff-extra: 'League Spartan', sans-serif;
     --ff-body: var(--ff-primary);
     --ff-heading: var(--ff-primary);
     --fw-regular: 400;
@@ -212,10 +213,17 @@ svg {
 /* Menu */
 
 .menu__header-container {
-    border: 1px solid saddlebrown;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.menu__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 10px;
+    text-align: center;
 }
 
 .menu__title {
@@ -232,15 +240,13 @@ svg {
 
 .menu__item-image {
     width: 100px;
-    height: auto;
+    height: 100px;
+    margin-block: 20px;
 }
 
 .menu__item-div {
-    border: 1px solid red;
     display: flex;
     gap: 20px;
-    padding-inline: 10px;
-    padding-block: 10px;
 }
 
 .menu__item-name {
@@ -250,20 +256,41 @@ svg {
 }
 
 .menu__item-decoration {
-    display: flex;
+    width: 20vw;
+    height: 2px;
+    background-color: var(--clr-accent-color);
+    margin: 0 2rem;
+    position: relative;
+    align-self: center;
 }
 
-.menu__item-decoration-circle {
-    width: 20px;
-    height: 20px;
+.menu__item-decoration::before {
+    content: '';
+    width: 1.5rem;
+    height: 1.5rem;
     border: 2px solid var(--clr-accent-color);
+    position: absolute;
+    left: 0;
+    transform: translate(-100%, -50%);
     border-radius: 50%;
 }
 
-.menu__item-decoration-line {
-    width: 60px;
-    border-bottom: 2px solid var(--clr-accent-color);
-    margin-bottom: 17%;
+.menu__item-decoration::after {
+    content: '';
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid var(--clr-accent-color);
+    position: absolute;
+    right: 0;
+    transform: translate(100%, -50%);
+    border-radius: 50%;
+}
+
+.menu__item-price {
+    font-family: var(--ff-extra);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-550);
+    color: var(--clr-accent-color);
 }
 
 
