@@ -1,3 +1,5 @@
+import loadMenu from "./menu.js";
+
 function createHome() {
     const home = document.createElement('div');
     home.classList.add('home');
@@ -17,6 +19,9 @@ function createHome() {
     const menuBtn = document.createElement('button');
     menuBtn.classList.add('home__button');
     menuBtn.textContent = 'See Menu';
+    menuBtn.addEventListener('click', (e) => {
+        loadMenu();
+    });
 
 
     home.appendChild(homeTitle);
