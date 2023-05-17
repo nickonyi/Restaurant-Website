@@ -75,7 +75,7 @@ body {
 body {
     text-rendering: optimizeSpeed;
     line-height: 1.5;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url('../assets/Back-image.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url('Back-image.jpg');
     background-repeat: no-repeat;
     background-position: 50% 30%;
     background-size: cover;
