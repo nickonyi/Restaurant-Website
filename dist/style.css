@@ -1,5 +1,6 @@
 :root {
     --clr-accent-color: hsl(45, 100%, 51%);
+    --clr-dark-color: hsl(0, 0%, 0%);
     --clr-primary-400: hsl(45, 100%, 51%);
     --clr-primary-100: hsl(45, 100%, 85%);
     --clr-neutral-100: hsl(0, 0%, 100%);
@@ -28,15 +29,6 @@
     --fs-secondary-heading: var(--fs-600);
     --fs-nav: var(--fs-500);
     --fs-button: var(--fs-300);
-}
-
-@media(min-width:50em) {
-     :root {
-        --fs-primary-heading: var(--fs-900);
-        --fs-secondary-heading: var(--fs-800);
-        --fs-body: var(--fs-500);
-        --fs-nav: var(--fs-300);
-    }
 }
 
 
@@ -246,6 +238,12 @@ svg {
 
 .menu__item-div {
     display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu__item-header {
+    display: flex;
     gap: 20px;
 }
 
@@ -316,7 +314,6 @@ svg {
 
 .contact__smallbox {
     margin-block: 20px;
-    width: 40vw;
     border: 3px solid var(--clr-neutral-900);
     text-transform: uppercase;
     font-size: var(--fs-400);
@@ -328,7 +325,7 @@ svg {
 
 .contact__smallbox:hover {
     background-color: var(--clr-neutral-900);
-    color: black;
+    color: var(--clr-dark-color);
 }
 
 .contact__box--header {
@@ -361,4 +358,72 @@ svg {
 
 .fa-github:hover {
     color: var(--clr-neutral-900);
+}
+
+
+/* Media queries */
+
+@media(min-width:50em) {
+     :root {
+        --fs-primary-heading: var(--fs-900);
+        --fs-secondary-heading: var(--fs-800);
+        --fs-body: var(--fs-500);
+        --fs-nav: var(--fs-300);
+    }
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+    /* Remove default margin */
+    * {
+        margin: 0;
+        padding: 0;
+        font: inherit;
+    }
+    .home__title {
+        font-size: var(--fs-800);
+    }
+    .home__text {
+        font-size: var(--fs-900);
+    }
+    .home__subtext {
+        font-size: var(--fs-550);
+    }
+    .menu__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    .menu-item_div {
+        text-align: left;
+        font-weight: 500;
+        margin: 2rem;
+    }
+    .menu__item-description {
+        letter-spacing: .15em;
+        max-width: 45rem;
+    }
+    .menu__item-image {
+        width: 160px;
+        height: auto;
+        border-radius: 50%;
+        margin: 0;
+    }
+    .contact__container {
+        margin-inline: 150px;
+        padding-block: 20px;
+        display: flex;
+        gap: 40px;
+    }
+    .contact__smallbox {
+        border: 1px solid var(--clr-neutral-900);
+    }
+    .menu__title {
+        font-size: var(--fs-700);
+    }
+    .menu__text {
+        font-size: var(--fs-800);
+    }
 }
